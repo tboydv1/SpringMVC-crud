@@ -47,7 +47,7 @@ public class EmployeeDaoImplTest {
 		
 	try {	
 			logger.info("Creating new employee object");
-			
+			logger.info("Creating new employee object");
 			Employee tempEmployee = new Employee("John", "Paulina", "john@gmail.com");
 			
 			logger.info("Storing employee to the database");
