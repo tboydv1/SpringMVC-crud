@@ -61,6 +61,8 @@ public class EmployeeDaoImplTest {
 		e.printStackTrace();
 		logger.warning("Error saving employee to the dataabse");
 	}
+	
+		logger.info("test completed successfully");
 		
 	}
 	
