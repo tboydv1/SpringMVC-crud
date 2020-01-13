@@ -62,7 +62,7 @@ public class EmployeeDaoImplTest {
 		logger.warning("Error saving employee to the dataabse");
 	}
 	
-		logger.info("test completed successfully");
+		
 		
 	}
 	
