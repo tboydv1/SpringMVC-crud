@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.springdemo</groupId>
+    <artifactId>springDemo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <properties>
+  <maven.compiler.source>13</maven.compiler.source>
+  <maven.compiler.targer>13</maven.compiler.targer>
+  </properties>
+  
+  
+  <artifactId>springDemo_web</artifactId>
+  
+  <packaging>war</packaging>
+  <name>springDemo_web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+  <dependency>
+   <groupId>com.springdemo</groupId>
+    <artifactId>springDemo_service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </dependency>  	
+  
+  
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>5.2.2.RELEASE</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>4.0.1</version>
+    <scope>provided</scope>
+</dependency>
+
+    
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.2.2.RELEASE</version>
+</dependency>
+
+  </dependencies>
+  <build>
+    <finalName>springDemo_web</finalName>
+  </build>
+</project>

@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.springdemo.entities.Employee;
 
 @Repository
-
 public class EmployeeDaoImpl implements EmployeeDao{
 
 	@Autowired

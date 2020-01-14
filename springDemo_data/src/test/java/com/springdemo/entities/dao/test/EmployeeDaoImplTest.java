@@ -31,8 +31,8 @@ public class EmployeeDaoImplTest {
 	@Autowired
 	private ComboPooledDataSource dataSource;
 	
-//	@Autowired
-//	private SessionFactory sessionFactory;
+	@Autowired
+	private SessionFactory sessionFactory;
 //	
 	@Test
 	public void dbManagerClassesInitializedTest() {
