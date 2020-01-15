@@ -10,7 +10,7 @@
   
   <properties>
   <maven.compiler.source>13</maven.compiler.source>
-  <maven.compiler.targer>13</maven.compiler.targer>
+  <maven.compiler.target>13</maven.compiler.target>
   </properties>
   
   
