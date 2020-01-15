@@ -28,7 +28,7 @@ import com.springdemo.entities.dao.EmployeeDao;
 @RunWith(SpringRunner.class)
 public class EmployeeDaoImplTest {
 
-	private Logger logger = Logger.getLogger(DbConnectionManagerTest.class.getName());
+	private Logger logger = Logger.getLogger(EmployeeDaoImplTest.class.getName());
 	
 	
 	@Autowired
@@ -57,29 +57,41 @@ public class EmployeeDaoImplTest {
 		
 		QueryRunner queryRunner = new QueryRunner(dataSource);
 		
-		DbUtils.loadDriver(jdbcDriver);
+		try {
+			
 		
-		conn = DriverManager.getConnection(DBUrl, username, password);
-		
-		queryRunner.update("drop database springdemodb");
-		
-		queryRunner.update("create database springdemodb");
-		
-//		queryRunner.update("drop table employee");
-		queryRunner.update("use springdemodb");
-		
-		queryRunner.update("create table `employee`(\n" + 
-				"	\n" + 
-				"	`id` int(11) not null auto_increment,\n" + 
-				"	`first_name` varchar(45) default null,\n" + 
-				"	`last_name` varchar(45) default null,\n" + 
-				"	`email` varchar(45) default null,\n" + 
-				"	\n" + 
-				"	 primary key(`id`)\n" + 
-				"	\n" + 
-				")ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;");
-		
-		DbUtils.close(conn);
+			DbUtils.loadDriver(jdbcDriver);
+			
+			conn = DriverManager.getConnection(DBUrl, username, password);
+			
+			queryRunner.update("drop database springdemodb");
+			
+			queryRunner.update("create database springdemodb");
+			
+	//		queryRunner.update("drop table employee");
+			queryRunner.update("use springdemodb");
+			
+			queryRunner.update("create table `employee`(\n" + 
+					"	\n" + 
+					"	`id` int(11) not null auto_increment,\n" + 
+					"	`first_name` varchar(45) default null,\n" + 
+					"	`last_name` varchar(45) default null,\n" + 
+					"	`email` varchar(45) default null,\n" + 
+					"	\n" + 
+					"	 primary key(`id`)\n" + 
+					"	\n" + 
+					")ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;");
+			
+		}
+		catch(Exception e) {
+			logger.throwing(EmployeeDaoImplTest.class.getName(), "setUp() method",e.getCause());
+			e.printStackTrace();
+		}
+		finally {
+			
+			DbUtils.close(conn);
+		}
+			
 ;		
 		
 	}
@@ -107,7 +119,7 @@ public class EmployeeDaoImplTest {
 			
 	}
 	catch(Exception e) {
-		
+	
 		e.printStackTrace();
 		logger.warning("Error saving employee to the dataabse");
 	}
@@ -177,21 +189,21 @@ public class EmployeeDaoImplTest {
 					
 	}
 	
-	@Test
-	public void updateEmployee() {
-		
-		//get an employee from the database
-		
-		List<Employee> employeeList = employeeDaoImpl.getEmployees();
-		
-		Employee tempEmployee4 = employeeList.get(1);
-		
-		//update the employee
-		String firstName = tempEmployee4.getFirstName();
-		String lastName = tempEmployee4.getLastName();
-		String email = tempEmployee4.getEmail();
-		
-	}
+//	@Test
+//	public void updateEmployee() {
+//		
+//		//get an employee from the database
+//		
+//		List<Employee> employeeList = employeeDaoImpl.getEmployees();
+//		
+//		Employee tempEmployee4 = employeeList.get(1);
+//		
+//		//update the employee
+//		String firstName = tempEmployee4.getFirstName();
+//		String lastName = tempEmployee4.getLastName();
+//		String email = tempEmployee4.getEmail();
+//		
+//	}
 	
 	
 	
