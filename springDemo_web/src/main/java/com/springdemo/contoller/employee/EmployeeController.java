@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springdemo.employee.service.EmployeeService;
 import com.springdemo.entities.Employee;
@@ -28,7 +28,7 @@ public class EmployeeController {
 		
 		employeeServiceImpl.addEmployee(tempEmployee);
 		
-		return "Employee successfully saved";
+		return "employee-list";
 		
 	}
 	
