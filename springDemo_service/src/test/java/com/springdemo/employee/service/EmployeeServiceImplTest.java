@@ -96,11 +96,11 @@ public class EmployeeServiceImplTest {
 		
 		Employee employee = new Employee("Peter","Brand","peter@gmail.com");
 		
-		doNothing().when(employeeService).deleteEmployee(isA(Employee.class));
+		doNothing().when(employeeService).deleteEmployee(isA(int.class));
 		
-		employeeService.deleteEmployee(employee);
+		employeeService.deleteEmployee(1);
 		
-		verify(employeeService, times(1)).deleteEmployee(employee);
+		verify(employeeService, times(1)).deleteEmployee(1);
 		
 	}
 	

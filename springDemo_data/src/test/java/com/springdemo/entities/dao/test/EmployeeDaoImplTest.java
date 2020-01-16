@@ -227,7 +227,7 @@ public class EmployeeDaoImplTest {
 		
 		assertNotNull(tempEmployee);
 		
-		employeeDaoImpl.deleteEmployee(tempEmployee);
+		employeeDaoImpl.deleteEmployee(tempEmployee.getId());
 		
 	}
 	
